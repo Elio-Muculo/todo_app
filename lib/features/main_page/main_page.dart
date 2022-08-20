@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/core/app_images.dart';
 import 'package:todo_app/features/main_page/widgets/app_bar/app_bar_widget.dart';
 import 'package:todo_app/features/main_page/widgets/tabbar/tabbar_widget.dart';
 
@@ -16,7 +17,9 @@ class MainPage extends StatelessWidget {
         ],
       ),
       floatingActionButton: IconButton(
-        icon: Image.asset(),
+        iconSize: 50,
+        onPressed: () { },
+        icon: Image.asset(AppImages.circle),
       ),
     );
   }
