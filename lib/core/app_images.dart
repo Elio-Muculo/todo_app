@@ -9,4 +9,5 @@ class AppImages {
   static String get logo => "assets/images/logo.png";
   static String get avatar => "assets/images/elio.jpg";
   static String get git => "assets/images/git.png";
+  static String get todoLogo => "assets/images/TODO.png";
 }
