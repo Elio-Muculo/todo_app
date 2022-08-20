@@ -12,4 +12,5 @@ class AppImages {
   static String get todoLogo => "assets/images/TODO.png";
   static String get allTasks => "assets/images/ALL_TASK.png";
   static String get menu => "assets/images/heroicons.png";
+  static String get circle => "assets/images/cicle.png";
 }
