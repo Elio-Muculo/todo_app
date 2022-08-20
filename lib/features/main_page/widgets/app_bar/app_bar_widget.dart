@@ -6,16 +6,19 @@ class AppBarWIdget extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 90, horizontal: 21),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Image.asset(AppImages.allTasks),
-          IconButton(
-              onPressed: () { }, 
-              icon: Image.asset(AppImages.menu))
-        ],
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 21),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Image.asset(AppImages.allTasks),
+            IconButton(
+                iconSize: 40,
+                onPressed: () { }, 
+                icon: Image.asset(AppImages.menu))
+          ],
+        ),
       ),
     );
   }
@@ -23,5 +26,5 @@ class AppBarWIdget extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   // TODO: implement preferredSize
-  Size get preferredSize => const Size.fromHeight(200);
+  Size get preferredSize => const Size.fromHeight(140);
 }
