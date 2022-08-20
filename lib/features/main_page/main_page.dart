@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/features/main_page/widgets/app_bar/app_bar_widget.dart';
 
 
 class MainPage extends StatelessWidget {
@@ -6,6 +7,8 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Scaffold(
+      appBar: AppBarWIdget(),
+    );
   }
 }
