@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todo_app/features/read_all_todo/read_all_todo.dart';
+import 'package:todo_app/features/splash/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Todo App',
       debugShowCheckedModeBanner: false,
-      home: ReadAllTodo(),
+      home: SplashScreen(),
       // onGenerateRouteroutes: ,
     );
   }
