@@ -45,7 +45,7 @@ class _TabBarWidgetState extends State<TabBarWidget> with TickerProviderStateMix
             child: TabBarView(
               controller: tabController,
               children: [
-                Container(color: Colors.deepOrange,),
+                Center(child: Text('01'),),
                 Center(child: Text('02')),
                 Center(child: Text('03')),
               ],

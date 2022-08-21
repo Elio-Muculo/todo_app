@@ -13,15 +13,34 @@ class MainPage extends StatelessWidget {
       appBar: const AppBarWIdget(),
       body: const TabBarWidget(),
       floatingActionButton: IconButton(
-        iconSize: 60,
+        iconSize: 40,
         onPressed: () { },
         icon: Image.asset(AppImages.circle, width: 60, height: 60,),
       ),
-      bottomNavigationBar: Row(
-        children: const [
-          Icon(Icons.abc),
-          Icon(Icons.abc)
-        ],
+      bottomNavigationBar: Container(
+        decoration: const BoxDecoration(
+          boxShadow: [
+            BoxShadow(blurRadius: 5.0, color: Colors.black26, blurStyle: BlurStyle.outer)
+          ]
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 21, vertical: 5),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              IconButton(
+                onPressed: () {},
+                iconSize: 40,
+                icon: Image.asset(AppImages.person),
+              ),
+              IconButton(
+                onPressed: () {},
+                iconSize: 40,
+                icon: Image.asset(AppImages.marked),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

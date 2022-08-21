@@ -13,4 +13,6 @@ class AppImages {
   static String get allTasks => "assets/images/ALL_TASK.png";
   static String get menu => "assets/images/heroicons.png";
   static String get circle => "assets/images/icons_circle.png";
+  static String get person => "assets/images/person.png";
+  static String get marked => "assets/images/marked_icon.png";
 }

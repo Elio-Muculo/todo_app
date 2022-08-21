@@ -7,17 +7,25 @@ class AppBarWIdget extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 21),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Image.asset(AppImages.allTasks),
-            IconButton(
-                iconSize: 40,
-                onPressed: () { }, 
-                icon: Image.asset(AppImages.menu))
-          ],
+      child: Container(
+        decoration: const BoxDecoration(
+            boxShadow: [
+              BoxShadow(blurRadius: 6.0, color: Colors.black26, blurStyle: BlurStyle.outer)
+            ]
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 21),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Image.asset(AppImages.allTasks),
+              IconButton(
+                  iconSize: 40,
+                  onPressed: () { },
+                  icon: Image.asset(AppImages.menu)
+              ),
+            ],
+          ),
         ),
       ),
     );
