@@ -8,7 +8,7 @@ class AppBarWIdget extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 21),
+        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 21),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

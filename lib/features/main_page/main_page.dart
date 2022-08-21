@@ -11,7 +11,7 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const AppBarWIdget(),
-      body: TabBarWidget(),
+      body: const TabBarWidget(),
       floatingActionButton: IconButton(
         iconSize: 60,
         onPressed: () { },
