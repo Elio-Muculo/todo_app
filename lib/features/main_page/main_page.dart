@@ -11,18 +11,14 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const AppBarWIdget(),
-      body: Column(
-        children: const [
-          TabBarWidget()
-        ],
-      ),
+      body: TabBarWidget(),
       floatingActionButton: IconButton(
-        iconSize: 50,
+        iconSize: 60,
         onPressed: () { },
-        icon: Image.asset(AppImages.circle),
+        icon: Image.asset(AppImages.circle, width: 60, height: 60,),
       ),
       bottomNavigationBar: Row(
-        children: [
+        children: const [
           Icon(Icons.abc),
           Icon(Icons.abc)
         ],

@@ -23,19 +23,34 @@ class _TabBarWidgetState extends State<TabBarWidget> with TickerProviderStateMix
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 21),
-      alignment: Alignment.center,
-      child: TabBar(
-        isScrollable: true,
-        labelColor: Colors.black,
-        indicator: const UnderlineTabIndicator(
-            borderSide: BorderSide(width: 2.0),
-            insets: EdgeInsets.symmetric(horizontal: 50.0)
-        ),
-        controller: tabController,
-        tabs: const [
-          Tab(text: "TODAY",),
-          Tab(text: "TOMORROW",),
-          Tab(text: "UPCOMINGS",)
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          TabBar(
+            isScrollable: true,
+            labelColor: Colors.black,
+            indicatorSize: TabBarIndicatorSize.tab,
+            indicator: const UnderlineTabIndicator(
+                borderSide: BorderSide(width: 2.0),
+                insets: EdgeInsets.symmetric(horizontal: 50.0)
+            ),
+            controller: tabController,
+            tabs: const [
+              Tab(text: "TODAY",),
+              Tab(text: "TOMORROW",),
+              Tab(text: "UPCOMINGS",)
+            ],
+          ),
+          Expanded(
+            child: TabBarView(
+              controller: tabController,
+              children: [
+                Container(color: Colors.deepOrange,),
+                Center(child: Text('02')),
+                Center(child: Text('03')),
+              ],
+            ),
+          )
         ],
       ),
     );
