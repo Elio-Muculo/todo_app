@@ -19,19 +19,31 @@ class InheritedCounter extends InheritedWidget {
 }
 
 
-class InheritedLouver extends InheritedWidget {
+// class InheritedLouver extends InheritedWidget {
+//   const InheritedLouver({required Widget child, required this.count})
+//       : super(child: child);
+//
+//   final HomeState count;
+//
+//   static InheritedLouver of(BuildContext context) {
+//     return context.dependOnInheritedWidgetOfExactType()!;
+//   }
+//
+//   @override
+//   bool updateShouldNotify(InheritedLouver oldWidget) {
+//     return oldWidget.count.value != count.value;
+//   }
+//
+// }
+
+
+class InheritedLouver extends InheritedNotifier<HomeState> {
   const InheritedLouver({required Widget child, required this.count})
-      : super(child: child);
+      : super(child: child, notifier: count);
 
   final HomeState count;
 
   static InheritedLouver of(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType()!;
+    return context.dependOnInheritedWidgetOfExactType<InheritedLouver>()!;
   }
-
-  @override
-  bool updateShouldNotify(InheritedLouver oldWidget) {
-    return oldWidget.count.value != count.value;
-  }
-
 }

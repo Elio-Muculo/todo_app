@@ -62,12 +62,7 @@ class _TabBarWidgetState extends State<TabBarWidget> with TickerProviderStateMix
                   animation: counter,
                 )),
                 Center(
-                    child: ValueListenableBuilder(
-                      valueListenable: count,
-                      builder: (context, value, _) {
-                        return Text(value.toString());
-                      }
-                    )
+                    child: Text(count.value.toString())
                 ),
                 Center(child: Text('03')),
               ],
