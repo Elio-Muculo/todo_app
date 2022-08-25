@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/features/main_page/controller/Inheritedcounter.dart';
+import 'package:todo_app/features/main_page/controller/homepagecontroller.dart';
 import 'package:todo_app/features/splash/splash_screen.dart';
 
 void main() {
@@ -11,11 +13,17 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Todo App',
-      debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
-      // onGenerateRouteroutes: ,
+    return InheritedLouver(
+      count: HomeState(),
+      child: InheritedCounter(
+        counter: HomeController(),
+        child: const MaterialApp(
+          title: 'Todo App',
+          debugShowCheckedModeBanner: false,
+          home: SplashScreen(),
+          // onGenerateRouteroutes: ,
+        ),
+      ),
     );
   }
 }

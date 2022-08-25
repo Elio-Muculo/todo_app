@@ -1,14 +1,14 @@
 
 import 'package:flutter/material.dart';
 
-// class HomeController extends ValueNotifier<int> {
-//   HomeController({int? value}) : super(value ?? 0);
-//
-//   void increment() {
-//     value++;
-//   }
-//
-// }
+class HomeState extends ValueNotifier<int> {
+  HomeState({int? value}) : super(value ?? 1);
+
+  void increment() {
+    value++;
+  }
+
+}
 
 
 class HomeController extends ChangeNotifier {

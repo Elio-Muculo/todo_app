@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/features/main_page/controller/Inheritedcounter.dart';
 import 'package:todo_app/features/main_page/controller/homepagecontroller.dart';
 
 import '../../main_page.dart';
@@ -16,7 +17,6 @@ class _TabBarWidgetState extends State<TabBarWidget> with TickerProviderStateMix
   late TabController _tabcontroller;
 
   TabController get tabController => _tabcontroller;
-  HomeController counter = HomeController();
 
   @override
   void initState() {
@@ -27,6 +27,10 @@ class _TabBarWidgetState extends State<TabBarWidget> with TickerProviderStateMix
 
   @override
   Widget build(BuildContext context) {
+    final counter = InheritedCounter.of(context).counter;
+    final count = InheritedLouver.of(context).count;
+
+
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 21),
       child: Column(
@@ -57,7 +61,14 @@ class _TabBarWidgetState extends State<TabBarWidget> with TickerProviderStateMix
                   },
                   animation: counter,
                 )),
-                Center(child: Text('02')),
+                Center(
+                    child: ValueListenableBuilder(
+                      valueListenable: count,
+                      builder: (context, value, _) {
+                        return Text(value.toString());
+                      }
+                    )
+                ),
                 Center(child: Text('03')),
               ],
             ),

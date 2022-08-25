@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app/core/app_images.dart';
+import 'package:todo_app/features/main_page/controller/Inheritedcounter.dart';
 import 'package:todo_app/features/main_page/controller/homepagecontroller.dart';
 import 'package:todo_app/features/main_page/widgets/app_bar/app_bar_widget.dart';
 import 'package:todo_app/features/main_page/widgets/tabbar/tabbar_widget.dart';
@@ -9,10 +10,12 @@ import 'package:todo_app/features/main_page/widgets/tabbar/tabbar_widget.dart';
 class MainPage extends StatelessWidget {
   MainPage({Key? key}) : super(key: key);
 
-  HomeController counter = HomeController();
 
   @override
   Widget build(BuildContext context) {
+    final counter = InheritedCounter.of(context).counter;
+    final count = InheritedLouver.of(context).count;
+
     return Scaffold(
       appBar: const AppBarWIdget(),
       body: const TabBarWidget(),
@@ -34,6 +37,7 @@ class MainPage extends StatelessWidget {
             children: [
               IconButton(
                 onPressed: () {
+                  count.increment();
                 },
                 iconSize: 40,
                 icon: Image.asset(AppImages.person),
