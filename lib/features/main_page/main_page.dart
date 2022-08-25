@@ -5,16 +5,11 @@ import 'package:todo_app/features/main_page/widgets/app_bar/app_bar_widget.dart'
 import 'package:todo_app/features/main_page/widgets/tabbar/tabbar_widget.dart';
 
 
-HomeController counter = HomeController();
 
 class MainPage extends StatelessWidget {
   MainPage({Key? key}) : super(key: key);
 
-
-  @override
-  void dispose() {
-    counter.dispose();
-  }
+  HomeController counter = HomeController();
 
   @override
   Widget build(BuildContext context) {
@@ -37,15 +32,8 @@ class MainPage extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              ValueListenableBuilder(
-                builder: (context, value, _) {
-                  return Text(value.toString());
-              },
-                valueListenable: counter,
-              ),
               IconButton(
                 onPressed: () {
-                  print(counter.value);
                 },
                 iconSize: 40,
                 icon: Image.asset(AppImages.person),

@@ -16,7 +16,7 @@ class _TabBarWidgetState extends State<TabBarWidget> with TickerProviderStateMix
   late TabController _tabcontroller;
 
   TabController get tabController => _tabcontroller;
-  // final counter = HomeController();
+  HomeController counter = HomeController();
 
   @override
   void initState() {
@@ -51,11 +51,11 @@ class _TabBarWidgetState extends State<TabBarWidget> with TickerProviderStateMix
             child: TabBarView(
               controller: tabController,
               children: [
-                Center(child: ValueListenableBuilder(
-                  builder: (context, value, _) {
-                    return Text(value.toString());
+                Center(child: AnimatedBuilder(
+                  builder: (context, _) {
+                    return Text(counter.counter.toString());
                   },
-                  valueListenable: counter,
+                  animation: counter,
                 )),
                 Center(child: Text('02')),
                 Center(child: Text('03')),
