@@ -7,9 +7,13 @@ class InheritedCounter extends InheritedWidget {
 
   final HomeController counter;
 
+  static InheritedCounter of(BuildContext context) {
+    return context.dependOnInheritedWidgetOfExactType()!;
+  }
+
   @override
   bool updateShouldNotify(InheritedCounter oldWidget) {
-    return oldWidget.counter.value != counter.value;
+    return oldWidget.counter.counter != counter.counter;
   }
 
 }
