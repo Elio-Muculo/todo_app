@@ -19,11 +19,30 @@ class AppBarWIdget extends StatelessWidget implements PreferredSizeWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Image.asset(AppImages.allTasks),
-              IconButton(
+              PopupMenuButton(
+                  tooltip: 'Menu',
                   iconSize: 40,
-                  onPressed: () { },
-                  icon: Image.asset(AppImages.menu)
-              ),
+                  icon: Image.asset(AppImages.menu),
+                  onSelected: (value) {
+                    if (value == '/contact') {
+                      print('helloo');
+                    }
+                  }, itemBuilder: (BuildContext context) {
+                return const [
+                  PopupMenuItem(
+                    child: Text("Hello"),
+                    value: '/hello',
+                  ),
+                  PopupMenuItem(
+                    child: Text("About"),
+                    value: '/about',
+                  ),
+                  PopupMenuItem(
+                    child: Text("Contact"),
+                    value: '/contact',
+                  )
+                ];
+              }),
             ],
           ),
         ),
